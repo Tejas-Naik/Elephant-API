@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>get to know all Elephants</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='index.css')}}" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta content="" name="description" />
+
+    <meta content="" name="keywords" />
+
+    <!-- Favicons -->
+    <link href="../static/assets/img/favicon.png" rel="icon" />
+    <link
+      href="../static/assets/img/apple-touch-icon.png"
+      rel="apple-touch-icon"
+    />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+      rel="stylesheet"
+    />
+
+    <!-- Vendor CSS Files -->
+    <link
+      href="../static/assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="../static/assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link href="../static/assets/vendor/aos/aos.css" rel="stylesheet" />
+    <link
+      href="../static/assets/vendor/remixicon/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      href="../static/assets/vendor/swiper/swiper-bundle.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="../static/assets/vendor/glightbox/css/glightbox.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Template Main CSS File -->
+    <link href="../static/assets/css/style.css" rel="stylesheet" />
+
+    <!-- =======================================================
+  * Template Name: Elephantly - v1.4.0
+  * Template URL: https://bootstrapmade.com/Elephantly-bootstrap-startup-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+  </head>
+
+  <body>
+    <!-- ======= Header ======= -->
+    <header id="header" class="header fixed-top">
+      <div
+        class="
+          container-fluid container-xl
+          d-flex
+          align-items-center
+          justify-content-between
+        "
+      >
+        <a href="/" class="logo d-flex align-items-center">
+          <img src="../static/assets/img/logo.png" alt="" />
+          <span>Elephantly</span>
+        </a>
+
+        <nav id="navbar" class="navbar">
+          <ul>
+            <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+            <li>
+              <a class="nav-link scrollto" href="/all">All Elephants</a>
+            </li>
+          </ul>
+          <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav>
+        <!-- .navbar -->
+      </div>
+    </header>
+    <!-- End Header -->
+
+    <!-- All Elephants -->
+    {% for i in range(47) %}
+    <!-- {[ elephant = elephants[i]}} -->
+<div id="container">	
+	
+	<div class="product-details">
+		
+	<h1>{{ elephant[i]['name'] }}</h1> 
+	<span class="hint-star star">
+	{{ elephant[i]['_id']}}
+	</span>
+		
+			<p class="information">"{{ elephant[i]['note'] }}</p>
+    <a href="{{ elephant['wikilink'] }}"><button class="btn btn-primary">Read More</button></a>
+			
+</div>
+	
+<div class="product-image">
+	
+	<img src="{{ elephant[i]['image'] }}" alt="">
+	
+
+<div class="info">
+	<h2> Description</h2>
+	<ul>
+		<li><strong>Sex : </strong>{{ elephant[i]['sex'] }}</li>
+		<li><strong>Affiliation : </strong>{{elephant[i]['affiliation']}}</li>
+		<li><strong>Spicies: </strong>{{elephant[i]['species']}}</li>
+		<li><strong>DOB: </strong>{{elephant[i]['dob']}}</li>
+		
+	</ul>
+</div>
+</div>
+
+</div>
+    {% endfor %}
+  </body>
+</html>
